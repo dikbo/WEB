@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Log in</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            display: flex;
+            color: #00CC66;
+            margin-left: 10.5px;
+            
+        }
+
+        header a:hover {
+            color: purple;
+            transition: 0.4s;
+        }
+        
+        a {
+            text-decoration : none;
+            color: inherit;
+        }
+
+        .container {
+            width: 100%;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+        }
+
+        .login {
+            width: 30%;
+            height: 600px;
+            background-color :white;
+            border-radius: 20px;
+            border: 1px solid lightgray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        h2 {
+            color: #00CC66;
+            font-size: 2em;
+        }
+
+        .login_id {
+            margin-top: 100px;
+            width: 80%;
+        }
+
+        .login_id input {
+            width: 100%;
+            height: 50px;
+            border-radius: 30px;
+            margin-top: 10px;
+            padding: 0px 20px;
+            border: 1px solid lightgray;
+            outline: none;
+        }
+
+        .login_pw {
+            margin-top: 20px;
+            width: 80%;
+        }
+
+        .login_pw input {
+            width: 100%;
+            height: 50px;
+            border-radius: 30px;
+            margin-top: 10px;
+            padding: 0px 20px;
+            border: 1px solid lightgray;
+            outline: none;
+        }
+
+        .submit {
+            margin-top: 50px;
+            width: 80%;
+         }
+        
+         .submit input {
+            width: 100%;
+            height: 50px;
+            border: 0;
+            outline: none;
+            border-radius: 40px;
+            background-color: #00CC66;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            letter-spacing: 2px;
+            }
+        
+        .submit :hover {
+            cursor : pointer;
+            background-color: #2eb471;
+        }
+
+        .signup {
+            margin-top: 16px;
+            width: 80%;
+         }
+
+        .signup input {
+            width: 100%;
+            height: 50px;
+            border: 1px solid #00CC66;
+            outline: none;
+            border-radius: 40px;
+            background-color: white;
+            color: #1c9458;
+            font-size: 1.2em;
+            font-weight: bold;
+            letter-spacing: 2px;
+            }
+
+            .signup :hover {
+                cursor : pointer;
+                background-color: #2eb471;
+                color: white;
+            }
+
+            footer {
+                margin-top: 60px;
+                display: flex;
+                justify-content: center;
+                color: rgb(170, 170, 170);
+                font-size: 12px;
+            }
+
+
+
+    </style>
+</head>
+<body>
+    <header><a href="index.html">
+                <h1  style = "margin:16px;">WEB</h1>
+            </a>
+    </header>
+    <form action="a.jsp" method="post" name="frm">
+    <div class="container">
+        
+        <div class="login" name="login">
+            <h2>Log in</h2>
+            <div class="login_id">
+                <h4>E-mail</h4>
+                <input type="email" name="id" placeholder="Email">
+            </div>
+            <div class="login_pw">
+                <h4>Password</h4>
+                <input type="password" name="passwd" placeholder="Password">
+            </div>
+            <div class="submit">
+                <input type="button" value="Log in" onclick="checkForm()">
+            </div>
+            <div class="signup">
+                <input type="button" value="Sign up" onclick="location.href='signup.html'">
+            </div>
+        </div>
+        
+    </div>
+    </form>
+    <footer>© 2021 - 2022 WEB Corp.</footer>
+
+    <script>
+        function checkForm() {
+            if(frm.id.value.length == 0) {
+                alert('아이디를 입력하세요.');
+                frm.id. focus();
+                return;
+                } 
+                else if(frm.passwd.value.length == 0) {
+                    alert('비밀번호를 입력하세요');
+                    frm.passwd. focus();
+                    return;
+                }
+            frm.submit();
+        }
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign up</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            display: flex;
+            color: #00CC66;
+            margin-left: 10.5px;
+            
+        }
+
+        header a:hover {
+            color: purple;
+            transition: 0.4s;
+        }
+        
+        a {
+            text-decoration : none;
+            color: inherit;
+        }
+
+        .container {
+            width: 100%;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+        }
+
+        .signup {
+            width: 70%;
+            height: 750px;
+            background-color :white;
+            border-radius: 20px;
+            border: 1px solid lightgray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        h2 {
+            display: block;
+            color: black;
+            font-size: 2em;
+            margin-right: auto;
+            margin-left: 10%;
+
+        }
+        .name {
+            margin-top: 48px;
+            width: 80%;
+        }
+        .name input {
+            width: 100%;
+            height: 50px;
+            border-radius: 30px;
+            margin-top: 10px;
+            padding: 0px 20px;
+            border: 1px solid lightgray;
+            outline: none;
+        }
+
+        .signup_id {
+            margin-top: 20px;
+            width: 80%;
+        }
+
+        .signup_id input {
+            width: 100%;
+            height: 50px;
+            border-radius: 30px;
+            margin-top: 10px;
+            padding: 0px 20px;
+            border: 1px solid lightgray;
+            outline: none;
+        }
+
+        .signup_pw {
+            margin-top: 20px;
+            width: 80%;
+        }
+
+        .signup_pw input {
+            width: 100%;
+            height: 50px;
+            border-radius: 30px;
+            margin-top: 10px;
+            padding: 0px 20px;
+            border: 1px solid lightgray;
+            outline: none;
+        }
+
+        .signup_cpw {
+            margin-top: 20px;
+            width: 80%;
+        }
+
+        .signup_cpw input {
+            width: 100%;
+            height: 50px;
+            border-radius: 30px;
+            margin-top: 10px;
+            padding: 0px 20px;
+            border: 1px solid lightgray;
+            outline: none;
+        }
+
+        .gender {
+            margin-top: 20px;
+            width: 80%;
+        }
+
+        .gender select {
+            width: 100%;
+            height: 50px;
+            border-radius: 10px;
+            margin-top: 10px;
+            padding: 0px 20px;
+            border: 1px solid lightgray;
+            outline: none;
+            font-size: 16px;
+            
+        }
+
+        .submit {
+            margin-top: 50px;
+            width: 80%;
+         }
+        
+         .submit input {
+            width: 100%;
+            height: 50px;
+            border: 0;
+            outline: none;
+            border-radius: 40px;
+            background-color: #00CC66;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            letter-spacing: 2px;
+            }
+        
+        .submit :hover {
+            cursor : pointer;
+            background-color: #2eb471;
+        }
+
+            footer {
+                margin-top: 60px;
+                display: flex;
+                justify-content: center;
+                color: rgb(170, 170, 170);
+                font-size: 12px;
+            }
+
+
+
+    </style>
+</head>
+<body>
+    <header><a href="index.html">
+                <h1  style = "margin:16px;">WEB</h1>
+            </a>
+    </header>
+
+    <form action="a.jsp" method="get" name="frm">
+    <div class="container">
+        
+        <div class="signup">
+            <h2>Sign up</h2>
+            <div class="name">
+                <h4>Name</h4>
+                <input type="name" name="name" placeholder="Name">
+            </div>
+            <div class="signup_id">
+                <h4>E-mail</h4>
+                <input type="email" name="id" placeholder="Email">
+            </div>
+            <div class="signup_pw">
+                <h4>Password</h4>
+                <input type="password" name="passwd"  placeholder="Password">
+            </div>
+            <div class="signup_cpw">
+                <h4>Confirm Password</h4>
+                <input type="password" name="cpasswd"  placeholder="Confirm Password">
+            </div>
+            <div class="gender">
+                <h4>Gender</h4>
+                <select name="gender">
+                    <option value="">Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            <div class="submit">
+                <input type="button" value="Sign up" onclick="checkForm()">
+            </div>
+        </div>
+        
+
+
+    </div>
+    </form>
+    <footer>© 2021 - 2022 WEB Corp.</footer>
+
+    <script>
+        function checkForm() {
+                if(frm.name.value.length == 0) {
+                alert('이름을 입력하세요.');
+                frm.name. focus();
+                return;
+                } 
+                else if(frm.id.value.length == 0) {
+                    alert('이메일을 입력하세요');
+                    frm.id. focus();
+                    return;
+                }
+                else if(frm.passwd.value.length == 0) {
+                    alert('비밀번호를 입력하세요');
+                    frm.passwd. focus();
+                    return;
+                }
+                else if(frm.cpasswd.value != frm.passwd.value) {
+                    alert('비밀번호가 일치하지 않습니다');
+                    frm.name. focus();
+                    return;
+                }
+                else if(frm.gender.value == "") {
+                    alert('성별을 선택하세요');
+                    frm.gender. focus();
+                    return;
+                }
+
+                frm.submit();
+        }
+    </script>
+
+
+    
+</body>
+</html>
